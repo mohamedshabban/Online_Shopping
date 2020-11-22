@@ -1,0 +1,13 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+<partial name="_Home" />
+
+<div class="row">
+    @foreach (var product in @Model.ProductsOFTheWeek)
+    {
+        <partial name="_ProductCard" model="product" />
+    }
+</div>

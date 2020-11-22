@@ -1,0 +1,8 @@
+﻿@model WebSite.ViewModels.ProductsListViewModel
+@{
+    ViewData["Title"] = "Products";
+}
+@foreach (var product in @Model.Products)
+{
+    <partial name="_ProductCard" model="product"/>
+}

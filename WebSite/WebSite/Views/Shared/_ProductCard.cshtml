@@ -1,0 +1,31 @@
+﻿@model Product
+<table class="table">
+    
+    <tbody>
+    <tr>
+        <th>
+            <img src="@Model.ImageUrl" width="100" height="100" />
+        </th>
+        <th>
+            <h3>
+                <a asp-controller="Product"
+                   asp-action="Details" 
+                   asp-route-productId="@Model.ProductId">@Model.Name</a>
+            </h3>
+        </th>
+        <th>
+            <h4 class="pull-right">@Model.Price.ToString("C")</h4>
+        </th>
+    </tr>
+    </tbody>
+
+    
+</table>
+<div class="addToCart">
+    <p>
+        <a class="btn btn-primary" 
+           asp-controller="ShoppingCart" 
+           asp-action="AddToShoppingCart"
+           asp-route-productId="@Model.ProductId">Add to cart</a>
+    </p>
+</div>
